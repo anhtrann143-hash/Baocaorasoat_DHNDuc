@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Báo cáo Rà soát Du học nghề Đức</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* --- Cấp 1: Đề mục chính (I, II, III...) --- */
+        details.main-item {
+            border: 1px solid #e5e7eb; /* gray-200 */
+            border-radius: 0.5rem; /* rounded-lg */
+            overflow: hidden; /* Đảm bảo bo góc hoạt động */
+            margin-bottom: 1rem; /* Khoảng cách giữa các mục chính */
+        }
+        details.main-item > summary {
+            padding: 1rem 1.25rem;
+            background-color: #f9fafb; /* gray-50 */
+            cursor: pointer;
+            font-weight: 600; /* font-semibold */
+            font-size: 1.25rem; /* text-xl */
+            transition: background-color 0.2s;
+            list-style: none; /* Ẩn mũi tên mặc định */
+        }
+        details.main-item > summary::-webkit-details-marker {
+            display: none; /* Ẩn mũi tên cho Chrome */
+        }
+        details.main-item > summary::before {
+            content: '+';
+            font-weight: 700;
+            display: inline-block;
+            margin-right: 0.75rem;
+            width: 1.25rem;
+            text-align: center;
+        }
+        details.main-item[open] > summary::before {
+            content: '−';
+        }
+        details.main-item > summary:hover {
+            background-color: #f3f4f6; /* gray-100 */
+        }
+        details.main-item[open] > summary {
+            background-color: #f3f4f6; /* gray-100 */
+            border-bottom: 1px solid #e5e7eb;
+        }
+        details.main-item > div {
+            padding: 1rem 1.25rem 1.5rem 1.25rem;
+            background-color: #ffffff; /* white */
+        }
+
+        /* --- Cấp 2: Đề mục con (1, 2, 3...) --- */
+        details.sub-item {
+            margin-top: 1rem;
+            border: 1px solid #e5e7eb; /* gray-200 */
+            border-radius: 0.5rem; /* rounded-lg */
+            overflow: hidden;
+        }
+        details.sub-item:first-child {
+            margin-top: 0;
+        }
+        details.sub-item > summary {
+            padding: 0.75rem 1rem; /* padding nhỏ hơn */
+            background-color: #fafafa; /* gray-50/white */
+            cursor: pointer;
+            font-weight: 600; /* font-semibold */
+            font-size: 1.125rem; /* text-lg */
+            transition: background-color 0.2s;
+            list-style: none; /* Ẩn mũi tên mặc định */
+        }
+         details.sub-item > summary::-webkit-details-marker {
+            display: none; /* Ẩn mũi tên cho Chrome */
+        }
+         details.sub-item > summary::before {
+            content: '+';
+            font-weight: 600;
+            display: inline-block;
+            margin-right: 0.5rem;
+            width: 1rem;
+            text-align: center;
+            font-size: 1rem;
+        }
+        details.sub-item[open] > summary::before {
+            content: '−';
+        }
+        details.sub-item > summary:hover {
+            background-color: #f3f4f6; /* gray-100 */
+        }
+        details.sub-item[open] > summary {
+            background-color: #f3f4f6; /* gray-100 */
+            border-bottom: 1px solid #e5e7eb;
+        }
+        details.sub-item > div {
+            padding: 1rem 1.5rem;
+            background-color: #ffffff; /* white */
+            font-size: 0.95rem; /* Gần text-base */
+            border-top: 1px solid #e5e7eb;
+        }
+        details.sub-item[open] > summary {
+             border-bottom: 1px solid #e5e7eb;
+        }
+        details.sub-item:not([open]) > summary {
+            border-bottom: none;
+        }
+        
+        /* --- Định dạng nội dung --- */
+        ul {
+            list-style-type: disc;
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+            margin-top: 0.5rem;
+        }
+        li {
+            margin-bottom: 0.25rem;
+        }
+        .placeholder {
+            font-style: italic;
+            color: #6b7280; /* gray-500 */
+            padding: 0.5rem 0;
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-50 text-gray-900 p-4 md:p-8">
+    <div class="max-w-4xl mx-auto">
+        <h1 class="text-3xl font-bold text-center mb-8">BÁO CÁO RÀ SOÁT CHƯƠNG TRÌNH DU HỌC NGHỀ ĐỨC</h1>
+
+        <div class="space-y-4">
+            <!-- MỤC I: ĐÀO TẠO -->
+            <details class="main-item">
+                <summary>I. ĐÀO TẠO</summary>
+                <div>
+                    <details class="sub-item">
+                        <summary>1. Chương trình đào tạo</summary>
+                        <div>
+                            <ul>
+                                <li><strong>Về Chương trình đào tạo:</strong> Đã được rà soát, cập nhật và phân chia thành các giai đoạn tương ứng với trình độ tiếng Đức (từ A1 đến B1).
+                                    <ul class="list-disc ml-6 mt-2">
+                                        <li><strong>Tổng số giờ:</strong> 800 giờ.</li>
+                                        <li><strong>Phân bổ:</strong> A1 (240 giờ), A2 (240 giờ), B1 (240 giờ) và Ôn thi B1 (200 giờ).</li>
+                                        <li><strong>Kiểm soát chất lượng:</strong> Ở tất cả các giai đoạn đều có kiểm tra giữa khoá và thi cuối kỳ, đảm bảo đánh giá trình độ người học một cách sát sao và kịp thời.</li>
+                                        <li><strong>Cập nhật:</strong> Chương trình đào tạo được nghiên cứu và cập nhật tương đối thường xuyên, dự kiến bản cập nhật mới nhất trong tháng 11/2026.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Về hình thức đào tạo:</strong> Đào tạo trực tiếp theo hình thức toàn thời gian và bán thời gian.</li>
+                                <li><strong>Về phương pháp đào tạo:</strong> Phương pháp đào tạo chưa được chú trọng đổi mới và cập nhật.</li>
+                                <!-- Bổ sung link Khung chương trình đào tạo -->
+                                <li class="mt-4">
+                                    <strong>Khung chương trình đào tạo hiện hành:</strong>
+                                    <a href="https://docs.google.com/spreadsheets/d/1i-cU4EIJ7Haddv8zE6vVieL0K4AqBuOM/edit?rtpof=true" target="_blank" class="font-medium text-blue-600 hover:text-blue-800 hover:underline ml-2">
+                                        Xem chi tiết tại đây
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </details>
+
+                    <!-- BỔ SUNG MỤC 2 & 3 CỦA PHẦN I -->
+                    <details class="sub-item">
+                        <summary>2. Tổ chức đào tạo</summary>
+                        <div>
+                            <ul class="list-disc ml-6 mt-1 space-y-1">
+                                <li>Đã có quy trình phối hợp tổ chức các lớp tiếng Đức nhưng còn sơ sài, chưa có văn bản ban hành chính thức.</li>
+                                <li>Việc phối hợp tổ chức đào tạo còn phụ thuộc nhiều vào nhân sự vận hành (GVCN, GV, PĐT,...) nên chưa cập nhật kịp thời và chưa nắm bắt được tâm lý người học.</li>
+                                <li>Điều này dẫn đến tình trạng đào tạo chưa hiệu quả, đặc biệt là các lớp Speaking với người nước ngoài.</li>
+                            </ul>
+                        </div>
+                    </details>
+                    
+                    <details class="sub-item">
+                        <summary>3. Giảng viên</summary>
+                        <div>
+                            <ul class="list-disc ml-6 mt-1 space-y-1">
+                                <li>Giảng viên trẻ, năng động, tích cực cập nhật, đổi mới phương pháp giảng dạy.</li>
+                                <li>Tuy nhiên, đội ngũ giảng viên chưa có nhiều kinh nghiệm đứng lớp, chưa tâm lý với học viên.</li>
+                            </ul>
+                        </div>
+                    </details>
+
+                    <!-- LỖI: Mục 5. Báo cáo tình trạng DHN bị đặt sai vị trí... -->
+                </div>
+            </details>
+
+            <!-- BỔ SUNG MỤC II: HỌC VIÊN -->
+            <details class="main-item">
+                <summary>II. HỌC VIÊN</summary>
+                <div>
+                    <details class="sub-item" open> <!-- Mở sẵn mục con này -->
+                        <summary>Kết quả khảo sát học viên</summary>
+                        <div>
+                            <!-- BỔ SUNG NHẬN XÉT SƠ BỘ -->
+                            <h4 class="font-semibold mt-2 mb-3 text-base">Nhận xét sơ bộ (Tóm tắt):</h4>
+                            
+                            <h5 class="font-semibold mt-3 mb-1 text-base text-gray-800">1. Về công tác Đào tạo</h5>
+                            <ul class="list-disc ml-6 mt-1 space-y-1">
+                                <li><strong>Củng cố kiến thức:</strong> Sinh viên mong muốn có lớp phụ đạo (ngữ pháp, từ vựng, đọc).</li>
+                                <li><strong>Tăng thực hành:</strong> Đề xuất tăng cường luyện nghe, nói, viết thư và cần kịch bản/lộ trình tự học.</li>
+                                <li><strong>Tổ chức:</strong> Cần xem lại hiệu quả thi thử và nghiên cứu mời thêm GV nước ngoài.</li>
+                            </ul>
+
+                            <h5 class="font-semibold mt-4 mb-1 text-base text-gray-800">2. Về công tác Tư vấn Du học nghề (DHN)</h5>
+                            <ul class="list-disc ml-6 mt-1 space-y-1">
+                                <li><strong>Hiện trạng:</strong> Nhiều sinh viên phản ánh thông tin tư vấn còn chung chung, chưa cụ thể.</li>
+                                <li><strong>Nhu cầu chính:</strong> Cần tư vấn chuyên sâu về các ngành (Điều dưỡng, NHKS...), chương trình chuyển đổi bằng và thủ tục chứng minh tài chính.</li>
+                                <li><strong>Ghi chú:</strong> Một số ít SV có người nhà hỗ trợ nên không cần tư vấn tìm đơn hàng.</li>
+                            </ul>
+                            <hr class="my-6 border-gray-200">
+
+                            <!-- Link khảo sát chi tiết -->
+                            <p class="py-2">
+                                <a href="https://anhtrann143-hash.github.io/PV_TiengDuc/" target="_blank" class="font-medium text-blue-600 hover:text-blue-800 hover:underline">
+                                    Bấm vào đây để xem Báo cáo khảo sát sinh viên chi tiết
+                                </a>
+                            </p>
+                        </div>
+                    </details>
+                </div>
+            </details>
+
+            <!-- BỔ SUNG MỤC III: KINH DOANH -->
+            <details class="main-item">
+                <summary>III. KINH DOANH</summary>
+                <div>
+                    <details class="sub-item">
+                        <summary>1. Căn cứ kinh doanh</summary>
+                        <div>
+                            <ul class="list-disc ml-6 mt-1 space-y-1">
+                                <li>Có Thông báo tuyển sinh rõ ràng, ban hành chương trình du học nghề Đức.</li>
+                                <li>Có Quy chế đóng phí và hoàn phí.</li>
+                                <!-- Bổ sung link văn bản nguồn -->
+                                <li class="mt-3">
+                                    <strong>Thư mục văn bản nguồn:</strong>
+                                    <a href="https://drive.google.com/drive/folders/1lrRGXkJaxlsFOiE2MkP5afcuZFTMKquG?usp=drive_link" target="_blank" class="font-medium text-blue-600 hover:text-blue-800 hover:underline ml-2">
+                                        Xem tại đây
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </details>
+                    
+                    <details class="sub-item">
+                        <summary>2. Báo cáo kinh doanh & MKT</summary>
+                        <div>
+                            <!-- Bổ sung dòng mới ở đây -->
+                            <p class="font-semibold text-red-600 mb-3">Chưa có báo cáo kinh doanh cụ thể.</p>
+                            
+                            <!-- Các nội dung đã có -->
+                            <h5 class="font-semibold mt-1 mb-2 text-base text-gray-800">Về đối chiếu lead</h5>
+                            <ul class="list-disc ml-6 mt-1 space-y-1">
+                                <li>Phát hiện <strong>121 lead</strong> (từ tháng 3-8/2025) từ MKT không được nhập lên phần mềm CRM sau khi đối chiếu.</li>
+                            </ul>
+
+                            <h5 class="font-semibold mt-4 mb-2 text-base text-gray-800">Về hiệu suất MKT (5 tháng gần nhất)</h5>
+                            <ul class="list-disc ml-6 mt-1 space-y-1">
+                                <li><strong>Chi phí trên mỗi Lead (CPL) Rất Tốt:</strong> Chi phí để thu về một lead (CPL) luôn thấp hơn đáng kể so với mục tiêu (KPI) đề ra là 250,000 VND.</li>
+                                <li><strong>Chất lượng Lead Không Ổn Định:</strong> Tỷ lệ Warm Lead (WL) – chỉ số đo lường chất lượng lead – rất biến động và thường xuyên không đạt mục tiêu 50%.</li>
+                                <li><strong>Chi phí Thực tế cao:</strong> Sự sụt giảm về chất lượng lead đã đẩy Chi phí trên mỗi Warm Lead (Chi phí/WL) lên mức rất cao, đỉnh điểm là 643,842 VND trong tháng 9.</li>
+                            </ul>
+
+                            <h5 class="font-semibold mt-4 mb-2 text-base text-gray-800">Nhận định</h5>
+                            <ul class="list-disc ml-6 mt-1 space-y-1">
+                                <li>Đã tối ưu chi phí quảng cáo (CPL), nhưng chưa duy trì chất lượng lead đầu vào. Chi phí/WL đang rất cao và không ổn định.</li>
+                            </ul>
+                            
+                            <!-- Bổ sung link báo cáo chi tiết nguồn -->
+                            <hr class="my-4 border-gray-200">
+                            <p>
+                                <strong>Báo cáo chi tiết nguồn MKT:</strong>
+                                <a href="https://drive.google.com/drive/folders/1J3J1RxDa96X-PK8VtAPvkksx830YOsgW?usp=drive_link" target="_blank" class="font-medium text-blue-600 hover:text-blue-800 hover:underline ml-2">
+                                    Xem tại đây
+                                </a>
+                            </p>
+                        </div>
+                    </details>
+                    
+                    <details class="sub-item">
+                        <summary>3. Đối tác kinh doanh</summary>
+                        <div>
+                            <h5 class="font-semibold mt-1 mb-2 text-base text-gray-800">Đối tác tuyển sinh</h5>
+                            <ul class="list-disc ml-6 mt-1 space-y-1">
+                                <li>Chưa có sự đồng nhất về mẫu Biên bản hợp tác, Hợp đồng, Phụ lục,...</li>
+                                <li>Nhiều văn bản thiếu chữ ký, thiếu dấu, thiếu thời gian ký, thiếu số hiệu,...</li>
+                                <li>Có mẫu cập nhật Hợp đồng kinh doanh 2025 nhưng chưa sử dụng/chưa có đối tác kể từ khi áp dụng.</li>
+                                <li><strong>Yêu cầu:</strong> Bổ sung danh sách đối tác.</li>
+                            </ul>
+                            
+                            <h5 class="font-semibold mt-4 mb-2 text-base text-gray-800">Đối tác đầu ngoại</h5>
+                            <ul class="list-disc ml-6 mt-1 space-y-1">
+                                <li>Chưa có sự đồng nhất về mẫu Biên bản hợp tác, Hợp đồng, Phụ lục,...</li>
+                                <li>Nhiều văn bản thiếu chữ ký, thiếu dấu, thiếu thời gian ký, thiếu số hiệu,...</li>
+                            </ul>
+                            
+                            <!-- Bổ sung link thư mục đối tác -->
+                            <hr class="my-4 border-gray-200">
+                            <p>
+                                <strong>Thư mục hồ sơ Đối tác:</strong>
+                                <a href="https://drive.google.com/drive/folders/11KujAGj8jttqdMCoJxSTksziunpYIGI_?usp=drive_link" target="_blank" class="font-medium text-blue-600 hover:text-blue-800 hover:underline ml-2">
+                                    Xem tại đây
+                                </a>
+                            </p>
+                        </div>
+                    </details>
+                    
+                    <details class="sub-item">
+                        <summary>4. Hợp đồng và hồ sơ học viên</summary>
+                        <div>
+                            <p>Đã có đủ số lượng hợp đồng Xúc tiến DHN tương ứng với các học viên đã đăng ký gói xúc tiến. Tuy nhiên:</p>
+                            <ul class="list-disc ml-6 mt-1 space-y-1">
+                                <li>Mẫu hợp đồng không đồng nhất.</li>
+                                <li>Nhiều hợp đồng không có ngày tháng, số hiệu.</li>
+                                <li>Không có checklist hoặc bảng theo dõi văn bản nội bộ, hợp đồng.</li>
+                            </ul>
+                            <h5 class="font-semibold mt-4 mb-2 text-base text-gray-800">Tình trạng hồ sơ học viên</h5>
+                            <ul class="list-disc ml-6 mt-1 space-y-1">
+                                <li>Không đầy đủ, không thống nhất về loại hồ sơ - giấy tờ; định dạng (cứng/mềm), số lượng,...</li>
+                                <li>Không có checklist theo dõi và cập nhật.</li>
+                            </ul>
+
+                            <!-- Bổ sung link folder gốc -->
+                            <hr class="my-4 border-gray-200">
+                            <p>
+                                <strong>Thư mục Hợp đồng & Hồ sơ gốc:</strong>
+                                <a href="https://drive.google.com/drive/folders/1S4iH6LUrqRPPIrznkUKlMlm500K8DVkM?usp=drive_link" target="_blank" class="font-medium text-blue-600 hover:text-blue-800 hover:underline ml-2">
+                                    Xem tại đây
+                                </a>
+                            </p>
+                        </div>
+                    </details>
+                    
+                    <!-- DI CHUYỂN MỤC 5 TỪ MỤC I XUỐNG ĐÂY -->
+                    <details class="sub-item">
+                        <summary>5. Báo cáo tình trạng DHN</summary>
+                        <div>
+                             <!-- Thay thế placeholder bằng nội dung mới -->
+                             <ul class="list-disc ml-6 mt-1 space-y-1">
+                                <li>Chưa có báo cáo tình trạng du học nghề cụ thể, <strong>yêu cầu bổ sung</strong>.</li>
+                                <li>Hiện tại có thông tin tình trạng của một số học viên từ sale chịu trách nhiệm chính, nhưng chưa đầy đủ và không được cập nhật.</li>
+                             </ul>
+
+                            <!-- Bổ sung link báo cáo cá nhân -->
+                            <hr class="my-4 border-gray-200">
+                            <p>
+                                <strong>Báo cáo cá nhân (Sale):</strong>
+                                <a href="https://docs.google.com/spreadsheets/d/14muY6qX-6nP0BgHtWcAqZQnOVjIXLgKq/edit?usp=drive_link&ouid=116108997101717510836&rtpof=true&sd=true" target="_blank" class="font-medium text-blue-600 hover:text-blue-800 hover:underline ml-2">
+                                    Xem tại đây
+                                </a>
+                            </p>
+                        </div>
+                    </details>
+                </div>
+            </details>
+
+            <!-- MỤC IV: NHÂN SỰ -->
+            <details class="main-item">
+                <summary>IV. NHÂN SỰ</summary>
+                <div>
+                    <details class="sub-item">
+                        <summary>1. Giảng viên</summary>
+                        <div>
+                            <p class="placeholder">[Nội dung mục này cần được bổ sung từ báo cáo của phòng Nhân sự, bao gồm tình hình biến động nhân sự, công tác tuyển dụng, và đánh giá hiệu suất (KPIs) của đội ngũ giảng viên.]</p>
+                        </div>
+                    </details>
+                    
+                    <details class="sub-item">
+                        <summary>2. Nhân viên tư vấn</summary>
+                        <div>
+                            <p class="placeholder">[Nội dung mục này cần được bổ sung từ báo cáo của phòng Nhân sự, bao gồm tình hình biến động nhân sự, công tác tuyển dụng, và đánh giá hiệu suất (KPIs) của đội ngũ tư vấn tuyển sinh.]</p>
+                        </div>
+                    </details>
+
+                    <!-- BỔ SUNG MỤC 3. ĐỐI THOẠI 1-1 -->
+                    <details class="sub-item">
+                        <summary>3. Đối thoại 1-1</summary>
+                        <div>
+                            <!-- Tóm tắt lại nội dung cho súc tích -->
+                            <h5 class="font-semibold mt-1 mb-2 text-base text-gray-800">Tóm tắt mảng Đào tạo (Từ GV)</h5>
+                            <ul class="list-disc ml-6 mt-1 space-y-1">
+                                <li><strong>Tình hình SV:</strong> Ý thức học tập rất thấp, tâm thế sai lệch (chỉ muốn có chứng chỉ, không quyết tâm). Chất lượng các lớp không đồng đều, SV yếu cần phụ đạo.</li>
+                                <li><strong>Chương trình:</strong> Thiếu giáo trình chuẩn (phải tự biên soạn/merge). Lộ trình 8-10 tháng có chứng chỉ bị đánh giá là **rất khó**. Cần cải tiến phương pháp (slide online, app/web hỗ trợ).</li>
+                                <li><strong>Rủi ro & Đề xuất:</strong> Tồn tại rủi ro (GV "dụ dỗ" SV, HĐ đầu ngoại không chính thống). Đề xuất phân loại SV bằng kiểm tra đầu vào, tăng cường GV bản địa và đẩy mạnh đầu ngoại (VD: VietHoga).</li>
+                            </ul>
+                            
+                            <hr class="my-4 border-gray-200">
+
+                            <h5 class="font-semibold mt-1 mb-2 text-base text-gray-800">Tóm tắt mảng Tư vấn & Tuyển sinh (Từ NVTV)</h5>
+                            <ul class="list-disc ml-6 mt-1 space-y-1">
+                                <li><strong>Thị trường & Lead:</strong> Nhu cầu thị trường lớn nhưng cạnh tranh không lành mạnh. Các nguồn lead chính đang gặp khó khăn (MKT thấp điểm, Schooltour không hiệu quả, Giới thiệu sụt giảm do uy tín đào tạo).</li>
+                                <li><strong>Quy trình & Vấn đề:</strong> Quy trình nội bộ chậm, không khép kín (nghẽn duyệt HĐ). Khó chốt sale (do HV chờ lớp, phân vân giá, phốt chất lượng đầu ra).</li>
+                                <li><strong>Phối hợp:</strong> Thiếu đồng bộ nghiêm trọng giữa các bộ phận: Tư vấn - Đào tạo (thiếu linh hoạt), MKT - Tư vấn (sai timeline), Tư vấn - Quản lý (không rõ cơ chế đại lý), Tư vấn - HV (tư vấn sai thông tin lương).</li>
+                                <li><strong>Cơ hội:</strong> Dựa vào uy tín sẵn có, tập trung vào tệp khách hàng đã có B1 và phát triển sản phẩm "HĐ đầu ngoại" cho nhóm này.</li>
+                            </ul>
+
+                            <!-- Bổ sung link thư mục tại đây -->
+                            <hr class="my-4 border-gray-200">
+                            <p>
+                                <strong>Nội dung chi tiết phỏng vấn 1-1:</strong>
+                                <a href="https://drive.google.com/drive/folders/1KB0IFsq3tM_BdfPhAXVfi0gmiQrXDqWT?usp=drive_link" target="_blank" class="font-medium text-blue-600 hover:text-blue-800 hover:underline ml-2">
+                                    Xem tại đây
+                                </a>
+                            </p>
+                        </div>
+                    </details>
+                </div>
+            </details>
+
+            <!-- MỤC V: TÀI CHÍNH -->
+            <details class="main-item">
+                <summary>V. TÀI CHÍNH</summary>
+                <div>
+                     <p class="placeholder">[Nội dung mục này cần được bổ sung từ báo cáo của phòng Tài chính - Kế toán, bao gồm rà soát dòng tiền, công nợ, và tình hình thu-chi chi tiết của chương trình Du học nghề Đức.]</p>
+                </div>
+            </details>
+
+        </div> <!-- /space-y-4 -->
+    </div> <!-- /max-w-4xl -->
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
